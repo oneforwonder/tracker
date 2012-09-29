@@ -12,31 +12,31 @@
     :db/cardinality :db.cardinality/one
     :db.install/_attribute :db.part/db}
 
-   {:db/doc         "A generic ID attribute."
-    :db/ident       :gen/id 
-    :db/id          #db/id[:db.part/db]
-    :db/valueType   :db.type/uuid
-    :db/cardinality :db.cardinality/one
-    :db.install/_attribute :db.part/db}
+   ;{:db/doc         "A generic ID attribute."
+    ;:db/ident       :gen/id 
+    ;:db/id          #db/id[:db.part/db]
+    ;:db/valueType   :db.type/uuid
+    ;:db/cardinality :db.cardinality/one
+    ;:db.install/_attribute :db.part/db}
    
-   {:db/doc         "A generic container."
-    :db/ident       :gen/container
-    :db/id          #db/id[:db.part/db]
-    :db/valueType   :db.type/ref
-    :db/cardinality :db.cardinality/one
-    :db.install/_attribute :db.part/db}
+   ;{:db/doc         "A generic container."
+    ;:db/ident       :gen/container
+    ;:db/id          #db/id[:db.part/db]
+    ;:db/valueType   :db.type/ref
+    ;:db/cardinality :db.cardinality/one
+    ;:db.install/_attribute :db.part/db}
 
-   {:db/doc         "A generic subunit, probably part of a container."
-    :db/ident       :gen/subunit
-    :db/id          #db/id[:db.part/db]
-    :db/valueType   :db.type/ref
-    :db/isComponent true
-    :db/cardinality :db.cardinality/many
-    :db.install/_attribute :db.part/db}
+   ;{:db/doc         "A generic subunit, probably part of a container."
+    ;:db/ident       :gen/subunit
+    ;:db/id          #db/id[:db.part/db]
+    ;:db/valueType   :db.type/ref
+    ;:db/isComponent true
+    ;:db/cardinality :db.cardinality/many
+    ;:db.install/_attribute :db.part/db}
 
-   ;;included containers
-   [:db/add #db/id[:db.part/user] :db/ident :container/diet]
-   [:db/add #db/id[:db.part/user] :db/ident :container/exercise]
+   ;;;included containers
+   ;[:db/add #db/id[:db.part/user] :db/ident :container/diet]
+   ;[:db/add #db/id[:db.part/user] :db/ident :container/exercise]
 
    ])
 
