@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add a Food</title>
+  <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  <link href="/css/food.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <!--<script src="http://code.jquery.com/jquery-1.8.2.js"></script>-->
+  <script>
+    function loadFoods(page)
+    {
+    $.ajax("/mock/" + page).done(function( data ) {
+      document.getElementById("foods-grid").innerHTML=data;
+    });
+    }
+
+    function selectFood(food)
+    {
+      document.getElementById("food-input").setAttribute("value", food);
+      document.getElementById("new-food-form").submit();
+    }
+
+      
+    /*function updateFoods(foods) 
+    {
+      document.getElementById('foods-list').innerHTML=foods;
+    }
+    function ajs(data)
+      alert(data);
+    }
+    foods = 'Broccoli, carrots, peas';*/
+    //setTimeout("updateFoods(foods)", 2000);
+    //alert($.trim("  test "));
+    /*$.ajax("/mock/vegetables").done(function( data ) {
+      alert(data);
+    });*/
+    //alert("hi");
+  </script>
+</head>
+
+<body>
+  <h2>Add a Food</h2>
+
+  <form id="new-food-form" method="POST" action="/mock/new-food">
+    <input id="food-input" type="hidden" name="food">
+  </form>
+
+  <div class="row">
+    <div id="foods-grid" class="span7">
+      <span id="food-breadcrumb">
+        <a class="food-breadcrumb" href="#">Foods</a> 
+        <small><i class="icon-chevron-right"></i> </small>
+      </span>
+      <div class="row">
+        <a class="btn food-btn span2" onclick="loadFoods('fruit')"><img class="food-img" width=64 src="/img/food/fruit/apple.png"></img>Fruits</a>
+        <a class="btn food-btn span2"><img class="food-img" width=64 src="/img/food/vegetables/carrot.png"></img>Vegetables</a>
+        <a class="btn food-btn span2"><img class="food-img" width=64 src="/img/food/grains/wheat-128.png"></img>Grains</a>
+      </div>
+      <div class="row">
+        <a class="btn food-btn span2"><img class="food-img" width=64 src="/img/food/meat/bacon.png"></img>Meats</a>
+        <a class="btn food-btn span2"><img class="food-img" width=64 src="/img/food/beans/beans.png"></img>Beans</a>
+        <a class="btn food-btn span2"><img class="food-img" width=64 src="/img/food/dairy/cheese-64.png"></img>Dairy</a>
+      </div>
+      <div class="row">
+        <a class="btn food-btn span2"><img class="food-img" width=64 src="/img/food/beverages/soft-drink-64.png">Beverages</img></a>
+        <a class="btn food-btn span2"><img class="food-img" width=64 src="/img/food/storebought/cereal-box-64.png">Storebought</img></a>
+        <a class="btn food-btn span2"><img class="food-img" width=85 src="/img/food/homemade/mac-n-cheese-85.png">Homemade</a></img>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

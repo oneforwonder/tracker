@@ -1,0 +1,18 @@
+.food-btn {
+  margin: 4px;
+}
+
+.food-img {
+  margin-right: 4px;
+}
+
+.food-breadcrumb {
+  color: #333;
+  /*font-weight: bold;*/
+  style:none;
+}
+
+.food-breadcrumb:hover {
+  color: #333;
+  style: underline;
+}
