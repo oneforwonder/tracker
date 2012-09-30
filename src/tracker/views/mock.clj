@@ -3,7 +3,7 @@
         [noir.response :only [redirect]]
         [noir.session :only [flash-put! flash-get]]
         [hiccup.page-helpers :only [include-css html5]]
-        [tracker.views.common :only [serve-static]]))
+        [tracker.util :only [serve-static]]))
 
 (defpage [:get "/mock/:p"] {:keys [p]}
     (println "Serving" p)
