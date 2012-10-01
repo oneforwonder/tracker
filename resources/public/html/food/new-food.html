@@ -9,7 +9,7 @@
   <script>
     function loadFoods(page)
     {
-    $.ajax("/mock/" + page).done(function( data ) {
+    $.ajax("/diet/food-group/" + page).done(function( data ) {
       document.getElementById("foods-grid").innerHTML=data;
     });
     }
@@ -19,22 +19,6 @@
       document.getElementById("food-input").setAttribute("value", food);
       document.getElementById("new-food-form").submit();
     }
-
-      
-    /*function updateFoods(foods) 
-    {
-      document.getElementById('foods-list').innerHTML=foods;
-    }
-    function ajs(data)
-      alert(data);
-    }
-    foods = 'Broccoli, carrots, peas';*/
-    //setTimeout("updateFoods(foods)", 2000);
-    //alert($.trim("  test "));
-    /*$.ajax("/mock/vegetables").done(function( data ) {
-      alert(data);
-    });*/
-    //alert("hi");
   </script>
 </head>
 

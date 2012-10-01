@@ -1,17 +1,17 @@
 (ns tracker.views.common
   (:use [noir.core :only [defpartial]]
-        [hiccup.page-helpers :only [include-css html5]]))
+        [hiccup.page-helpers :only [include-css include-js html5]]))
 
 (def sidebar-links (array-map 
-  :Overview    "overview"
-  :To-Do       "todo"
-  :Diet        "diet"
-  :Exercise    "exercise"
-  :Financial   "financial"
-  :Programming "programming"
-  :Music       "music"
-  :Mind        "mind"
-  :Social      "social"))
+  :Overview    "/overview"
+  :To-Do       "/todo"
+  :Diet        "/diet"
+  :Exercise    "/exercise"
+  :Financial   "/financial"
+  :Programming "/programming"
+  :Music       "/music"
+  :Mind        "/mind"
+  :Social      "/social"))
 
 (defpartial sidebar []
   [:div {:class "span3"}
@@ -24,13 +24,21 @@
               (name section)]])
         sidebar-links)]])
 
-(defpartial layout [& content]
+(defpartial layout [options & content]
   (html5 {:lang "en"}
     [:head
       [:meta {:charset "utf-8"}]
       [:title "Rob's And Alex's Tracker for Tracking Things and Stuff That Alex And Rob Want To Track!"]
-      (include-css "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css")
-      (include-css "css/app.css")]
+     (map include-css
+          (concat ["http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css"
+                   "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/themes/smoothness/jquery-ui.css"
+                   "/css/app.css"]
+                  (:css options)))
+     (map include-js 
+          (concat ["https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js" 
+                   "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js" 
+                   "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"] 
+                  (:js options)))]
     [:body
       [:div {:class "container"} 
         [:div {:class "row"}
