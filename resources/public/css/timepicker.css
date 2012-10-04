@@ -14,6 +14,33 @@
   margin-left: 100px;
 }
 
+#form-buttons {
+    margin-left: 100px;
+}
+
 /*#add-food-modal {*/
   /*width: 600px;*/
 /*}*/
+
+#slider-vertical {
+    margin: auto;
+    margin-top: 14px;
+}
+
+#quanity-readout {
+    text-align: center;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.popover {
+    width: 80px;
+}
+
+#add-food-btn {
+    margin-right: 6px;
+}
+
+.food-input {
+    margin-bottom: 6px;
+}

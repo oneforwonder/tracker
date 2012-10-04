@@ -6,16 +6,7 @@ function loadFoods(page)
 function selectFood(food)
 {
   $("#add-food-modal").modal('hide');
-  $("#fti1").attr("value", "1 cup " + food);
+  $("#fti1").attr("value", "1 cup  " + food);
+  $("#foods-grid").load("/diet/food-group/food");
 } 
-
-function displayPopover() {
-  $(".popover-btn").popover('show', {title: "Quantity", content: "Pop!"});
-}
-
-$(window).bind("load", function() {
-  $(".alert").alert();
-  $(".popover-btn").popover({content: "Pop!", selector: ".popover-btn"});
-});
-
 

@@ -17,7 +17,6 @@
      ;[:button {:type "button" :class "close" :data-dismiss "alert"} "×"]
 
 (defn form-row [{:keys [label name type value input]}]
-
   (let [name (or name (str/lower-case (str/replace label " " "-"))) 
         type (or type "text")
         id (str "input-" name)]

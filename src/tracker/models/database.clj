@@ -77,7 +77,7 @@
     @(d/transact conn schema)
     conn))
 
-(def conn (init-db))
+;(def conn (init-db))
 
 (defn user-datom [name password]
   [{:gen/name name 

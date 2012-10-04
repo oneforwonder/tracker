@@ -37,7 +37,8 @@
      (map include-js 
           (concat ["https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js" 
                    "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js" 
-                   "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"] 
+                   "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"
+                   "/js/main.js"] 
                   (:js options)))]
     [:body
       [:div {:class "container"} 

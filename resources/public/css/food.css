@@ -1,28 +1,22 @@
 .food-btn {
-  /*margin: 6px;*/
   padding-top: 14px;
   padding-bottom: 14px;
   margin-top: 8px;
   margin-bottom: 8px;
-  /*height: 80px;*/
-  /*margin-top: 6px;*/
-  /*margin-bottom: 6px;*/
-  /*padding-left: 6px;*/
-  /*padding-right: 6px;*/
 }
 
 .food-img {
-  /*margin-right: 6px;*/
-  margin-right: 4px;
+    display: block;
+    margin: auto;
 }
 
+/* TODO: Consider using Bootstrap breadcrumb */
 #food-breadcrumb {
   font-size: 110%;
 }
 
 .food-breadcrumb {
   color: #333;
-  /*font-weight: bold;*/
   style:none;
 }
 
@@ -30,3 +24,4 @@
   color: #333;
   style: underline;
 }
+
