@@ -1,6 +1,6 @@
 (ns tracker.views.common
   (:use [noir.core :only [defpartial]]
-        [hiccup.page-helpers :only [include-css include-js html5]]))
+        [hiccup.page :only [include-css include-js html5]]))
 
 (def sidebar-links (array-map 
   :Overview    "/overview"

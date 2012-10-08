@@ -1,7 +1,8 @@
 (ns tracker.views.diet.today
-    (:use [tracker.util :only map-rows])
-    
-    )
+    (:require [tracker.views.common :as common])
+    (:use [noir.core :only [defpartial defpage]]
+          [tracker.models.diet :only [meals]]
+          [tracker.util :only [map-rows]]))
 
 (defpartial meal-card [title t-o-d foods]
   [:div {:class "meal span3"}
@@ -18,7 +19,6 @@
 (defpartial food-today []
   [:div {:class "food-today"}
    [:h3 "Today's Food"]
-   (display-flash flash)
    [:div {:class "meal-grid"}
     (map-rows (partial apply meal-card) meals 2 "row")]
    [:a {:class "btn btn-primary add-meal-btn" :href "/diet/new-meal"} "Add a Meal"]])

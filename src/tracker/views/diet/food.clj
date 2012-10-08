@@ -1,13 +1,16 @@
 (ns tracker.views.diet.food
     (:require [clojure.string :as str])
-    (:use [hiccup.page :only [html5]]
-          [tracker.models.diet :only [food-hierarchy]]))
+    (:use [noir.core :only [defpage defpartial]]
+          [noir.fetch.remotes :only [defremote]]
+          [hiccup.page :only [html5]]
+          [tracker.models.diet :only [food-hierarchy]]
+          [tracker.util :only [map-rows]]))
 
 (defn onclick-food [food] 
-  (format "selectFood('%s')" food))
+  (format "tracker.diet.food.selectFood('%s')" food))
 
 (defn onclick-category [category]
-  (format "loadFoods('%s')" (str/join "_" category)))
+  (format "tracker.diet.food.loadFoods('%s')" (str/join "/" category)))
 
 (defn food-img-path [category food]
   (str/lower-case (format "/img/%s/%s.png" (str/join "/" category) food)))
@@ -35,10 +38,19 @@
    (food-breadcrumb category)
    (map-rows (partial food-btn category) foods 3 "row-fluid"))
 
-(defpage "/diet/food-group/:fg" {:keys [fg]}
-  (let [category (str/split fg #"_")
-        foods    (get-in food-hierarchy (map str/capitalize category))]
-    (html5 (food-grid category foods))))
+(defremote food-group [fg]
+           (println "fg" fg)
+  (let [foods (get-in food-hierarchy (map str/capitalize fg))]
+    (food-grid fg foods)))
+
+(defpartial food-modal []
+  [:div {:class "modal hide fade" :id "add-food-modal"}
+   [:div {:class "modal-header"}
+    [:button {:type "button" :class "close" :data-dismiss "modal" :aria-hidden "true"} "&times;"]
+    [:h3 "Add Food"]]
+   [:div {:class "modal-body"}
+    [:div {:id "food-grid"}
+     (food-grid ["food"] (get-in food-hierarchy ["Food"]))]]])
 
 
 ;(defpartial add-a-food [meal category flash]

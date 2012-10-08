@@ -1,7 +1,10 @@
 (ns tracker.server
   (:require [noir.server :as server]))
 
-(server/load-views "src/tracker/views/")
+(server/load-views 
+  "src/tracker/views/"
+                   ;"src/tracker/views/diet"
+                   )
 
 (defn -main [& m]
   (let [mode (keyword (or (first m) :dev))

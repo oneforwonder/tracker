@@ -44,3 +44,12 @@
 .food-input {
     margin-bottom: 6px;
 }
+
+#slider-vertical {
+    height: 200px;
+    margin-bottom: 6px;
+}
+
+#quantity-readout {
+    margin-bottom: 8px;
+}

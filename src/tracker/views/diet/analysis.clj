@@ -1,4 +1,5 @@
-(ns tracker.views.diet.analysis)
+(ns tracker.views.diet.analysis
+    (:use [noir.core :only [defpage defpartial]]))
 
 (defpartial food-analysis []
   [:div {:class "food-analysis"}

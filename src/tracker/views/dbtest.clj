@@ -2,7 +2,7 @@
   (:use [noir.core :only [defpartial defpage]]
         [noir.response :only [redirect]]
         [noir.session :only [flash-put! flash-get]]
-        [hiccup.page-helpers :only [include-css html5]]
+        [hiccup.page :only [include-css html5]]
         [tracker.util :only [serve-static]]
         [tracker.models.database :as td]
         [datomic.api :only [db q] :as d]))

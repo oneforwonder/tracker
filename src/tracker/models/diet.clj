@@ -1,4 +1,5 @@
-(ns tracker.models.diet)
+(ns tracker.models.diet
+    (:use [clj-time.core :exclude [extend]]))
 
 (def food-hierarchy
   {"Food" (array-map
