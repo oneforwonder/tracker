@@ -90,6 +90,10 @@ body {
   margin-top: 16px;
 }
 
+#meal-text-input {
+    height: 10em;
+}
+
 
 /* Sidenav (based on Bootstrap docs sidenav) */
 

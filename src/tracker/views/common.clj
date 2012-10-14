@@ -40,7 +40,7 @@
                    "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"
                    "/js/main.js"] 
                   (:js options)))]
-    [:body
+    [:body {:onload (or (:onload options) "")}
       [:div {:class "container"} 
         [:div {:class "row"}
           (sidebar)

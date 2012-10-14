@@ -24,6 +24,7 @@
    [:a {:class "btn btn-primary add-meal-btn" :href "/diet/new-meal"} "Add a Meal"]])
 
 (defpage "/diet" []
-  (common/layout {}
+  (common/layout 
+    {:onload "tracker.diet.today.initToday()"}
     [:h1 "Diet"]
     (food-today)))

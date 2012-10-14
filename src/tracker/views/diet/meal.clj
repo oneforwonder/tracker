@@ -17,9 +17,6 @@
    [:a {:id (str "pop-btn" n) :class "btn popover-btn" :onclick (format "tracker.diet.meal.quantityPopover(%s)" n)} 
        [:i {:class "icon-resize-vertical"}]]])
 
-(defpage "/diet/new-meal/food-input/:n" {:keys [n]} 
-  (food-input n))
-
 (defremote food-text-input [n]
   (food-input n))
 
@@ -42,3 +39,10 @@
      (form-row {:label "Datetime" :value (unparse timepicker-formatter (local-now))})
      (form-row {:label "Foods" :name "foods[]" :input (food-input 0)})
      (form-buttons)]))
+
+(defpage [:get "/diet/new-text-meal"] []
+  (common/layout {}
+    [:h2 "Enter a New Meal by Text"]
+    [:p "Enter one food per line:"]
+    [:form
+     [:textarea {:type "text" :id "meal-text-input" :class "span4"}]]))
