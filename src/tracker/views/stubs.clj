@@ -1,6 +1,5 @@
 (ns tracker.views.stubs
-  (:require [tracker.views.common :as common]
-            [noir.content.getting-started])
+  (:require [tracker.views.common :as common])
   (:use [noir.core]
         [hiccup.core :only [html]]))
 
@@ -10,11 +9,6 @@
     [:h3 "Tasks:"]
     [:ul
      [:li "Improve Tracker"]]))
-
-(defpage "/exercise" []
-  (common/layout {}
-    [:h1 "Exercise"]
-    [:p "Lift something heavy"]))
 
 (defpage "/financial" []
   (common/layout {}

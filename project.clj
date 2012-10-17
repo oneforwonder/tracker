@@ -6,7 +6,8 @@
                            [jayq "0.1.0-alpha3"]
                            [fetch "0.1.0-alpha2"]
                            [crate "0.2.1"]
-                           [clj-time "0.4.4"]] 
+                           [clj-time "0.4.4"]
+                           [domina "1.0.0"]] 
             :plugins [[lein-cljsbuild "0.2.1"]]
             :cljsbuild {:repl-listen-port 9000
                         :repl-launch-commands {"ff" ["firefox" "-jsconsole" "http://localhost:8080/"]}

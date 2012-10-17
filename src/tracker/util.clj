@@ -1,5 +1,6 @@
 (ns tracker.util
-  (:use [clojure.java.io :only [resource]]) 
+  (:use [clojure.java.io :only [resource]]
+        [noir.core :only [defpartial]]) 
   (:require [clojure.string :as str]))
 
 (defn serve-static [res]
@@ -24,4 +25,7 @@
      [:label {:class "control-label" :for id} label]
      [:div {:class "controls"}
       (or input [:input {:type type :name name :id id :value value}])]]))
+
+(defpartial insert-js [src]
+  [:script {:type "text/javascript"} src])
 

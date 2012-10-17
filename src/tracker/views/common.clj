@@ -1,6 +1,7 @@
 (ns tracker.views.common
   (:use [noir.core :only [defpartial]]
-        [hiccup.page :only [include-css include-js html5]]))
+        [hiccup.page :only [include-css include-js html5]]
+        [tracker.util :only [insert-js]]))
 
 (def sidebar-links (array-map 
   :Overview    "/overview"
@@ -38,9 +39,11 @@
           (concat ["https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js" 
                    "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js" 
                    "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"
+                   "https://www.google.com/jsapi"
                    "/js/main.js"] 
-                  (:js options)))]
-    [:body {:onload (or (:onload options) "")}
+                  (:js options)))
+     (map insert-js (:js-src options))]
+    [:body 
       [:div {:class "container"} 
         [:div {:class "row"}
           (sidebar)
