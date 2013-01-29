@@ -42,7 +42,8 @@
 
 (defpage [:get "/diet/new-text-meal"] []
   (common/layout {}
-    [:h2 "Enter a New Meal by Text"]
+    [:h1 "Diet"]
+    [:h3 "Enter a New Meal by Text"]
     [:p "Enter one food per line:"]
     [:form
      [:textarea {:type "text" :id "meal-text-input" :class "span4"}]]))

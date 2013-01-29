@@ -29,7 +29,7 @@
   (html5 {:lang "en"}
     [:head
       [:meta {:charset "utf-8"}]
-      [:title "Rob's And Alex's Tracker for Tracking Things and Stuff That Alex And Rob Want To Track!"]
+      [:title "Mylo"]
      (map include-css
           (concat ["http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css"
                    "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/themes/smoothness/jquery-ui.css"

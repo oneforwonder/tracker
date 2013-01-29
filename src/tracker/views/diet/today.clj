@@ -25,6 +25,6 @@
 
 (defpage "/diet" []
   (common/layout 
-    {:js-src "tracker.diet.today.initToday()"}
+    {:js-src ["tracker.diet.today.initToday()"]}
     [:h1 "Diet"]
     (food-today)))
