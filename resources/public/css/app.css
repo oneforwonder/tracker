@@ -6,6 +6,19 @@ body {
   padding-top: 30px;
 }
 
+/*h1, h2, h3, h4, h5 {*/
+    /*color: #338833;*/
+/*}*/
+
+.table-header {
+    font-weight: bold;
+}
+
+.book-title {
+    font-style: italic;
+    margin-right: 1px;
+}
+
 
 /* Sidenav (based on Bootstrap docs sidenav) */
 
@@ -168,4 +181,11 @@ body {
 #pr-chart {
     width: 600px;
     height: 450px;
+}
+
+/* To-Do */
+.todo-done
+{
+    text-decoration: line-through;
+    color: #777777;
 }

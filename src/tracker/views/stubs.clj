@@ -8,6 +8,7 @@
     [:h1 "Todo"]
     [:h3 "Today"]
     [:ul
+     [:li {:class "todo-done"} "Find a way to view multiple email inboxes"]   
      [:li "Improve Tracker"]]  
     [:h3 "Next 10 Days"]
     [:ul
@@ -19,7 +20,10 @@
 (defpage "/financial" []
   (common/layout {}
     [:h1 "Financial"]
-    [:p "Make some money. Buy some things."]))
+    [:p "Make some money. Buy some things."]
+    [:h3 "To Buy"] 
+    [:ul
+     [:li "Punching bag (~$400)"]]))  
 
 (defpage "/programming" []
   (common/layout {}

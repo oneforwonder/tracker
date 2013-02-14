@@ -27,7 +27,9 @@
                             [(js/Date. 2012 9 30) 105 95  110 nil nil nil nil]
                             [(js/Date. 2012 10 1) 85  nil nil 75  65  nil 50]
                             [(js/Date. 2012 10 3) 95  100 110 nil nil nil nil]
-                            ;[(js/Date. 2012 10 5) 105 nil nil 70  55  nil 40]
+
+                            [(js/Date. 2013 1 1) nil 127 205 nil nil nil nil]
+                            [(js/Date. 2013 1 3) 165 nil nil 95  85  nil 80]
                             ]))))
 
 (defn chart-options []
