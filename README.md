@@ -2,6 +2,12 @@
 
 Creator of clarity. Inventor of initiative. Augur of action.
 
+tracker is envisioned to be an web application tailored to the needs of its
+primary author (Robert Nagle), to help where ever and how ever software can 
+help in the organization of a life.
+
+As of January 2014, it is not being developed.
+
 ## Usage
 
 ```bash
